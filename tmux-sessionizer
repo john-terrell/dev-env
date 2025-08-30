@@ -22,7 +22,6 @@ if tmux has-session -t=$selected_name 2> /dev/null; then
 fi
 
 tmux new-session -ds $selected_name -c $selected
+tmux send-keys -t $selected_name "[ -f "shell.nix" ] && nix-shell" ENTER
+#tmux send-keys -t $selected_name "setup-tmux
 switch_to
-# tmux send-keys -t $selected_name "if [[ -f "nix.shell" ]]; then nix-shell fi\n"
-tmux send-keys -t $selected_name "setup-tmux"
-
