@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 set -e
 
-pushd $HOME/Projects
+mkdir -p $HOME/Projects
+cd $HOME/Projects
 
 if [ -d "$HOME/Projects/CRL" ]; then
-    pushd CRL
+    cd CRL
     git pull
 else
     git clone git@gitea.coolpeople.io:Carnegie_Robotics/CRL.git
 fi
-

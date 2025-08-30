@@ -2,8 +2,8 @@
 
 set -e
 
-if [[ -x ".setup-tmux" ]]; then
-    ./setup-tmux
+if [[ -x "./.setup-tmux" ]]; then
+    ./.setup-tmux
 elif [[ -x "~/.setup-tmux" ]]; then
     ~/.setup-tmux
 fi

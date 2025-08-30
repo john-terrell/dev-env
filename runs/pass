@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+set -e
+
+if [ -d "$HOME/.password-store" ]; then
+    cd $HOME/.password-store
+    git pull
+else
+    git clone git@github.com:john-terrell/pass $HOME/.password-store
+fi
