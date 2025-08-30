@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+set -e
+
+if [[ -x ".setup-tmux" ]]; then
+    ./setup-tmux
+elif [[ -x "~/.setup-tmux" ]]; then
+    ~/.setup-tmux
+fi
