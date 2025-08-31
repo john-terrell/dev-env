@@ -12,6 +12,13 @@ return require('packer').startup(function(use)
 
   use { "catppuccin/nvim", as = "catppuccin" }
 
+  use({
+    "stevearc/oil.nvim",
+    config = function()
+      require("oil").setup()
+    end,
+  })
+
   use {
 	  'nvim-treesitter/nvim-treesitter',
 	  run = function()
