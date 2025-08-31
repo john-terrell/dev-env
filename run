@@ -17,7 +17,7 @@ done
 
 cd $script_dir
 
-execute rsync -aurlv dot-config/ "${XDG_CONFIG_HOME:-$HOME/.config}"
+#execute rsync -aurlv dot-config/ "${XDG_CONFIG_HOME:-$HOME/.config}"
 
 scripts=$(find ./runs -maxdepth 1 -mindepth 1 -executable -type f | sort)
 
