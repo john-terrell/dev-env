@@ -5,13 +5,23 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
-  use {
-      'nvim-telescope/telescope.nvim', tag = '0.1.8',
-      requires = { {'nvim-lua/plenary.nvim'} }
-  }
-
+  -- Catppucin Theme
   use { "catppuccin/nvim", as = "catppuccin" }
 
+  -- Lualine
+  use {
+      'nvim-lualine/lualine.nvim',
+      requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+  }
+
+  -- Bufferline
+  use {
+      'akinsho/bufferline.nvim', 
+      tag = "*", 
+      requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+  }
+
+  -- Oil file browser
   use({
     "stevearc/oil.nvim",
     config = function()
@@ -19,6 +29,13 @@ return require('packer').startup(function(use)
     end,
   })
 
+  -- Telescope
+  use {
+      'nvim-telescope/telescope.nvim', tag = '0.1.8',
+      requires = { {'nvim-lua/plenary.nvim'} }
+  }
+
+  -- Treesitter
   use {
       'nvim-treesitter/nvim-treesitter',
       run = function()
@@ -27,14 +44,13 @@ return require('packer').startup(function(use)
       end,
   }
 
-  use ( 'nvim-treesitter/playground' )
+  -- Harpoon
+  use 'theprimeagen/harpoon'
 
-  use ( 'theprimeagen/harpoon' )
-
-  use ( 'mbbill/undotree' )
-
+  -- VIM fugitive
   use ( 'tpope/vim-fugitive' )
 
+  -- CMP
   use {
       'hrsh7th/nvim-cmp',
       required = {
@@ -44,15 +60,7 @@ return require('packer').startup(function(use)
       }
   }
 
-  use {
-      'nvim-lualine/lualine.nvim',
-      requires = { 'nvim-tree/nvim-web-devicons', opt = true }
-  }
-
-  use {
-      'akinsho/bufferline.nvim', 
-      tag = "*", 
-      requires = { 'nvim-tree/nvim-web-devicons', opt = true }
-  }
+  -- CMake Tools
+  use ( 'Civitasv/cmake-tools.nvim' )
 
 end)
