@@ -61,6 +61,9 @@ return require('packer').startup(function(use)
   }
 
   -- CMake Tools
-  use ( 'Civitasv/cmake-tools.nvim' )
+  use 'Civitasv/cmake-tools.nvim'
+
+  -- DAP
+  use 'mfussenegger/nvim-dap'
 
 end)
