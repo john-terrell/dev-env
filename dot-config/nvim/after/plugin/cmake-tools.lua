@@ -10,7 +10,12 @@ require("cmake-tools").setup {
   --       ${kitGenerator}
   --       ${variant:xx}
   cmake_build_directory = function()
-      return "cmake-build-${variant:buildType}"
+      local build_dir_format = os.getenv("LOCAL_BUILD_DIR_FORMAT")
+      if (not build_dir_format) then
+          build_dir_format = "build/%s"
+      end
+
+      return string.format(build_dir_format, "${variant:buildType}")
   end, -- this is used to specify generate directory for cmake, allows macro expansion, can be a string or a function returning the string, relative to cwd.
   cmake_compile_commands_options = {
     action = "soft_link", -- available options: soft_link, copy, lsp, none
