@@ -63,7 +63,13 @@ return require('packer').startup(function(use)
   -- CMake Tools
   use 'Civitasv/cmake-tools.nvim'
 
-  -- DAP
-  use 'mfussenegger/nvim-dap'
+  -- Mason
+  use 'mason-org/mason-lspconfig.nvim'
 
+  use { 
+      'mason-org/mason.nvim',
+      required = {
+          'mason-org/mason-lspconfig.nvim'
+      }
+  }
 end)

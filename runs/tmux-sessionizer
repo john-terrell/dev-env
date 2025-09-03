@@ -1,14 +1,1 @@
-#!/usr/bin/env bash
-set -e
-
-url="https://raw.githubusercontent.com/ThePrimeagen/tmux-sessionizer/7edf8211e36368c29ffc0d2c6d5d2d350b4d729b/tmux-sessionizer"
-destination="$HOME/.local/bin/tmux-sessionizer"
-
-if [ ! -f  "$destination" ]; then
-    echo "tmux-serializer not present...installing..."
-    mkdir -p $(dirname "$destination")
-    curl -L $url > "$destination"
-    chmod +x "$destination"
-else
-    echo "tmux-serializer already exists...nothing to do."
-fi
+../runs.d/tmux-sessionizer
